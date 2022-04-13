@@ -20,7 +20,13 @@ def move_backward():
 
 def move_forward():
     disable_keys()
+
     forward(200)
+    if abs(pos()) < 1:
+        end_fill()
+        left(170)
+        return
+
     enable_keys()
 
 
