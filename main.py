@@ -58,16 +58,11 @@ def disable_keys():
     onkey(None, 'q')
 
 
-enable_keys()
+if __name__ == '__main__':
+    enable_keys()
 
-color('red', 'yellow')
+    color('red', 'yellow')
+    begin_fill()
 
-begin_fill()
-
-while True:
     listen()
-    if abs(pos()) < 1:
-        break
-
-end_fill()
-done()
+    done()
