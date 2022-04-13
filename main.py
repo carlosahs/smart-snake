@@ -37,16 +37,18 @@ def move_right():
 
 
 def enable_keys():
-    onkey(move_forward, 's')
-    onkey(move_left, 'a')
-    onkey(move_right, 'd')
+    onkey(move_forward, 'k')
+    onkey(move_backward, 'j')
+    onkey(move_left, 'h')
+    onkey(move_right, 'l')
     onkey(bye, 'q')
 
 
 def disable_keys():
-    onkey(None, 's')
-    onkey(None, 'a')
-    onkey(None, 'd')
+    onkey(None, 'k')
+    onkey(None, 'j')
+    onkey(None, 'h')
+    onkey(None, 'l')
     onkey(None, 'q')
 
 
