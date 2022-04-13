@@ -1,3 +1,4 @@
+from turtle import backward
 from turtle import begin_fill
 from turtle import bye
 from turtle import color
@@ -9,6 +10,12 @@ from turtle import left
 from turtle import onkey
 from turtle import pos
 from turtle import right
+
+
+def move_backward():
+    disable_keys()
+    backward(200)
+    enable_keys()
 
 
 def move_forward():
