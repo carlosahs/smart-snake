@@ -88,6 +88,8 @@ if __name__ == '__main__':
     main_screen.mode("standard")
     main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 
+    sqr = Square(10, 50)
+
     enable_keys()
 
     color('red', 'yellow')
