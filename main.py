@@ -59,6 +59,10 @@ class App:
         )
         self.rate = rate
 
+        self.enable_keys()
+
+        turtle.listen()
+
     def enable_keys(self) -> None:
         turtle.onkey(self.move_left, 'h')
         turtle.onkey(self.move_down, 'j')
