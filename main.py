@@ -80,16 +80,24 @@ class App:
         turtle.onkey(None, "q")
 
     def move_left(self) -> None:
+        self.disable_keys()
         self.square.left(self.rate)
+        self.enable_keys()
 
     def move_right(self) -> None:
+        self.disable_keys()
         self.square.right(self.rate)
+        self.enable_keys()
 
     def move_down(self) -> None:
+        self.disable_keys()
         self.square.down(self.rate)
+        self.enable_keys()
 
     def move_up(self) -> None:
+        self.disable_keys()
         self.square.up(self.rate)
+        self.enable_keys()
 
 
 if __name__ == "__main__":
