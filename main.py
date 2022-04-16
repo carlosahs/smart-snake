@@ -68,7 +68,7 @@ class App:
         turtle.onkey(self.move_down, 'j')
         turtle.onkey(self.move_up, 'k')
         turtle.onkey(self.move_right, 'l')
-        turtle.onkey(self.bye, 'q')
+        turtle.onkey(turtle.bye, 'q')
 
     def disable_keys(self) -> None:
         turtle.onkey(None, 'h')
