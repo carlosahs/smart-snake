@@ -14,7 +14,10 @@ from turtle import pos
 from turtle import right
 
 SNAKE_COLOR = (0, 0, 0)
-SNAKE_SIZE = 1
+SNAKE_SIZE = 0.5
+
+SCREEN_WIDTH = 640
+SCREEN_HEIGHT = 480
 
 
 class Square(turtle.Turtle):
