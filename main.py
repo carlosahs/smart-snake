@@ -83,6 +83,11 @@ def disable_keys() -> None:
 
 
 if __name__ == '__main__':
+    main_screen = turtle.Screen()
+
+    main_screen.mode("standard")
+    main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
+
     enable_keys()
 
     color('red', 'yellow')
