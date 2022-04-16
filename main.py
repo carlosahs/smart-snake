@@ -18,6 +18,7 @@ SNAKE_SIZE = 1
 
 
 class Square(turtle.Turle):
+class Square(turtle.Turtle):
     def __init__(self, x: int, y: int) -> None:
         self.x = x
         self.y = y
