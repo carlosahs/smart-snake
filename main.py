@@ -12,13 +12,13 @@ from turtle import pos
 from turtle import right
 
 
-def move_backward():
+def move_backward() -> None:
     disable_keys()
     backward(200)
     enable_keys()
 
 
-def move_forward():
+def move_forward() -> None:
     disable_keys()
 
     forward(200)
@@ -30,19 +30,19 @@ def move_forward():
     enable_keys()
 
 
-def move_left():
+def move_left() -> None:
     disable_keys()
     left(170)
     enable_keys()
 
 
-def move_right():
+def move_right() -> None:
     disable_keys()
     right(170)
     enable_keys()
 
 
-def enable_keys():
+def enable_keys() -> None:
     onkey(move_forward, 'k')
     onkey(move_backward, 'j')
     onkey(move_left, 'h')
@@ -50,7 +50,7 @@ def enable_keys():
     onkey(bye, 'q')
 
 
-def disable_keys():
+def disable_keys() -> None:
     onkey(None, 'k')
     onkey(None, 'j')
     onkey(None, 'h')
