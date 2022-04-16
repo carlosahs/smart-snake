@@ -133,5 +133,5 @@ def disable_keys() -> None:
 
 
 if __name__ == "__main__":
-    app = App()
-    turtle.done()
+    app = App(SNAKE_SIZE)
+    turtle.mainloop()
