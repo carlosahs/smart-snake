@@ -11,11 +11,7 @@ SCREEN_HEIGHT = 480
 
 class Square(turtle.Turtle):
     def __init__(
-        self,
-        x: int,
-        y: int,
-        size: float,
-        color: Tuple[int, int, int]
+        self, x: float, y: float, size: float, color: Tuple[int, int, int]
     ) -> None:
         self.x = x
         self.y = y
