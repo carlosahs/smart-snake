@@ -19,7 +19,7 @@ class Square(turtle.Turtle):
 
         turtle.Turtle.__init__(self, shape="square", visible=False)
 
-        self.pu()
+        # self.pu()
         self.shapesize(size)
         self.fillcolor(color)
         self.st()
