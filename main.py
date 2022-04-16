@@ -1,4 +1,5 @@
 import turtle
+import random
 
 from typing import Tuple
 
@@ -43,6 +44,48 @@ class Square(turtle.Turtle):
         self.sety(self.y)
 
 
+class App:
+    def __init__(self, rate: float) -> None:
+        main_screen = turtle.Screen()
+
+        main_screen.mode("standard")
+        main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
+
+        self.square = Square(
+            random.randint(0, int(SCREEN_WIDTH / rate)) * rate,
+            random.randint(0, int(SCREEN_HEIGHT / rate)) * rate,
+            SNAKE_SIZE,
+            SNAKE_COLOR,
+        )
+        self.rate = rate
+
+    def enable_keys(self) -> None:
+        self.onkey(self.move_left, 'h')
+        self.onkey(self.move_down, 'j')
+        self.onkey(self.move_up, 'k')
+        self.onkey(self.move_right, 'l')
+        self.onkey(self.bye, 'q')
+
+    def disable_keys(self) -> None:
+        self.onkey(None, 'h')
+        self.onkey(None, 'j')
+        self.onkey(None, 'k')
+        self.onkey(None, 'l')
+        self.onkey(None, 'q')
+
+    def move_left(self) -> None:
+        self.square.left(self.rate)
+
+    def move_right(self) -> None:
+        self.square.right(self.rate)
+
+    def move_down(self) -> None:
+        self.square.down(self.rate)
+
+    def move_up(self) -> None:
+        self.square.up(self.rate)
+
+
 def move_backward() -> None:
     disable_keys()
     turtle.backward(200)
@@ -74,33 +117,21 @@ def move_right() -> None:
 
 
 def enable_keys() -> None:
-    turtle.onkey(move_forward, 'k')
-    turtle.onkey(move_backward, 'j')
-    turtle.onkey(move_left, 'h')
-    turtle.onkey(move_right, 'l')
-    turtle.onkey(turtle.bye, 'q')
+    turtle.onkey(move_forward, "k")
+    turtle.onkey(move_backward, "j")
+    turtle.onkey(move_left, "h")
+    turtle.onkey(move_right, "l")
+    turtle.onkey(turtle.bye, "q")
 
 
 def disable_keys() -> None:
-    turtle.onkey(None, 'k')
-    turtle.onkey(None, 'j')
-    turtle.onkey(None, 'h')
-    turtle.onkey(None, 'l')
-    turtle.onkey(None, 'q')
+    turtle.onkey(None, "k")
+    turtle.onkey(None, "j")
+    turtle.onkey(None, "h")
+    turtle.onkey(None, "l")
+    turtle.onkey(None, "q")
 
 
-if __name__ == '__main__':
-    main_screen = turtle.Screen()
-
-    main_screen.mode("standard")
-    main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
-
-    sqr = Square(10, 50, SNAKE_SIZE, SNAKE_COLOR)
-
-    # enable_keys()
-    #
-    # color('red', 'yellow')
-    # begin_fill()
-    #
-    # listen()
+if __name__ == "__main__":
+    app = App()
     turtle.done()
