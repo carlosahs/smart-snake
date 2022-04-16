@@ -1,3 +1,5 @@
+import turtle
+
 from turtle import backward
 from turtle import begin_fill
 from turtle import bye
@@ -10,6 +12,25 @@ from turtle import left
 from turtle import onkey
 from turtle import pos
 from turtle import right
+
+SNAKE_COLOR = (0, 0, 0)
+SNAKE_SIZE = 1
+
+
+class Square(turtle.Turle):
+    def __init__(self, x: int, y: int) -> None:
+        self.x = x
+        self.y = y
+
+        turtle.Turtle.__init__(self, shape="square", visible=False)
+
+        self.pu()
+        self.shapesize(SNAKE_SIZE)
+        self.fillcolor(SNAKE_COLOR)
+        self.st()
+
+        self.setx(x)
+        self.sety(y)
 
 
 def move_backward() -> None:
