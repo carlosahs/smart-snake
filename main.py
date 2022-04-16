@@ -66,18 +66,18 @@ class App:
         turtle.listen()
 
     def enable_keys(self) -> None:
-        turtle.onkey(self.move_left, 'h')
-        turtle.onkey(self.move_down, 'j')
-        turtle.onkey(self.move_up, 'k')
-        turtle.onkey(self.move_right, 'l')
-        turtle.onkey(turtle.bye, 'q')
+        turtle.onkey(self.move_left, "h")
+        turtle.onkey(self.move_down, "j")
+        turtle.onkey(self.move_up, "k")
+        turtle.onkey(self.move_right, "l")
+        turtle.onkey(turtle.bye, "q")
 
     def disable_keys(self) -> None:
-        turtle.onkey(None, 'h')
-        turtle.onkey(None, 'j')
-        turtle.onkey(None, 'k')
-        turtle.onkey(None, 'l')
-        turtle.onkey(None, 'q')
+        turtle.onkey(None, "h")
+        turtle.onkey(None, "j")
+        turtle.onkey(None, "k")
+        turtle.onkey(None, "l")
+        turtle.onkey(None, "q")
 
     def move_left(self) -> None:
         self.square.left(self.rate)
