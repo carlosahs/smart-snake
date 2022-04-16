@@ -30,6 +30,22 @@ class Square(turtle.Turtle):
         self.setx(x)
         self.sety(y)
 
+    def left(self, distance: float) -> None:
+        self.x -= distance
+        self.setx(self.x)
+
+    def right(self, distance: float) -> None:
+        self.x += distance
+        self.setx(self.x)
+
+    def down(self, distance: float) -> None:
+        self.y -= distance
+        self.sety(self.y)
+
+    def up(self, distance: float) -> None:
+        self.y += distance
+        self.sety(self.y)
+
 
 def move_backward() -> None:
     disable_keys()
