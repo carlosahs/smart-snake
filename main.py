@@ -52,8 +52,10 @@ class App:
         main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 
         self.square = Square(
-            random.randint(0, int(SCREEN_WIDTH / rate)) * rate,
-            random.randint(0, int(SCREEN_HEIGHT / rate)) * rate,
+            random.randint(0, int(SCREEN_WIDTH / rate))
+            * rate - SCREEN_WIDTH / 2,
+            random.randint(0, int(SCREEN_HEIGHT / rate))
+            * rate - SCREEN_HEIGHT / 2,
             SNAKE_SIZE,
             SNAKE_COLOR,
         )
