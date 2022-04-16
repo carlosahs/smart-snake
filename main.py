@@ -1,5 +1,7 @@
 import turtle
 
+from typing import Tuple
+
 SNAKE_COLOR = (0, 0, 0)
 SNAKE_SIZE = 0.5
 
@@ -8,15 +10,21 @@ SCREEN_HEIGHT = 480
 
 
 class Square(turtle.Turtle):
-    def __init__(self, x: int, y: int) -> None:
+    def __init__(
+        self,
+        x: int,
+        y: int,
+        size: float,
+        color: Tuple[int, int, int]
+    ) -> None:
         self.x = x
         self.y = y
 
         turtle.Turtle.__init__(self, shape="square", visible=False)
 
         self.pu()
-        self.shapesize(SNAKE_SIZE)
-        self.fillcolor(SNAKE_COLOR)
+        self.shapesize(size)
+        self.fillcolor(color)
         self.st()
 
         self.setx(x)
@@ -75,7 +83,7 @@ if __name__ == '__main__':
     main_screen.mode("standard")
     main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 
-    sqr = Square(10, 50)
+    sqr = Square(10, 50, SNAKE_SIZE, SNAKE_COLOR)
 
     # enable_keys()
     #
