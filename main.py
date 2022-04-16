@@ -86,52 +86,6 @@ class App:
         self.square.up(self.rate)
 
 
-def move_backward() -> None:
-    disable_keys()
-    turtle.backward(200)
-    enable_keys()
-
-
-def move_forward() -> None:
-    disable_keys()
-
-    turtle.forward(200)
-    if abs(turtle.pos()) < 1:
-        turtle.end_fill()
-        turtle.left(170)
-        return
-
-    enable_keys()
-
-
-def move_left() -> None:
-    disable_keys()
-    turtle.left(170)
-    enable_keys()
-
-
-def move_right() -> None:
-    disable_keys()
-    turtle.right(170)
-    enable_keys()
-
-
-def enable_keys() -> None:
-    turtle.onkey(move_forward, "k")
-    turtle.onkey(move_backward, "j")
-    turtle.onkey(move_left, "h")
-    turtle.onkey(move_right, "l")
-    turtle.onkey(turtle.bye, "q")
-
-
-def disable_keys() -> None:
-    turtle.onkey(None, "k")
-    turtle.onkey(None, "j")
-    turtle.onkey(None, "h")
-    turtle.onkey(None, "l")
-    turtle.onkey(None, "q")
-
-
 if __name__ == "__main__":
     app = App(SNAKE_SIZE)
     turtle.mainloop()
