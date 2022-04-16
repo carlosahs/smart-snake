@@ -60,18 +60,18 @@ class App:
         self.rate = rate
 
     def enable_keys(self) -> None:
-        self.onkey(self.move_left, 'h')
-        self.onkey(self.move_down, 'j')
-        self.onkey(self.move_up, 'k')
-        self.onkey(self.move_right, 'l')
-        self.onkey(self.bye, 'q')
+        turtle.onkey(self.move_left, 'h')
+        turtle.onkey(self.move_down, 'j')
+        turtle.onkey(self.move_up, 'k')
+        turtle.onkey(self.move_right, 'l')
+        turtle.onkey(self.bye, 'q')
 
     def disable_keys(self) -> None:
-        self.onkey(None, 'h')
-        self.onkey(None, 'j')
-        self.onkey(None, 'k')
-        self.onkey(None, 'l')
-        self.onkey(None, 'q')
+        turtle.onkey(None, 'h')
+        turtle.onkey(None, 'j')
+        turtle.onkey(None, 'k')
+        turtle.onkey(None, 'l')
+        turtle.onkey(None, 'q')
 
     def move_left(self) -> None:
         self.square.left(self.rate)
