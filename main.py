@@ -46,10 +46,10 @@ class Square(turtle.Turtle):
 
 class App:
     def __init__(self, rate: float) -> None:
-        main_screen = turtle.Screen()
+        self.screen = turtle.Screen()
 
-        main_screen.mode("standard")
-        main_screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
+        self.screen.mode("standard")
+        self.screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 
         self.square = Square(
             random.randint(0, int(SCREEN_WIDTH / rate))
@@ -63,21 +63,21 @@ class App:
 
         self.enable_keys()
 
-        turtle.listen()
+        self.screen.listen()
 
     def enable_keys(self) -> None:
-        turtle.onkey(self.move_left, "h")
-        turtle.onkey(self.move_down, "j")
-        turtle.onkey(self.move_up, "k")
-        turtle.onkey(self.move_right, "l")
-        turtle.onkey(turtle.bye, "q")
+        self.screen.onkey(self.move_left, "h")
+        self.screen.onkey(self.move_down, "j")
+        self.screen.onkey(self.move_up, "k")
+        self.screen.onkey(self.move_right, "l")
+        self.screen.onkey(turtle.bye, "q")
 
     def disable_keys(self) -> None:
-        turtle.onkey(None, "h")
-        turtle.onkey(None, "j")
-        turtle.onkey(None, "k")
-        turtle.onkey(None, "l")
-        turtle.onkey(None, "q")
+        self.screen.onkey(None, "h")
+        self.screen.onkey(None, "j")
+        self.screen.onkey(None, "k")
+        self.screen.onkey(None, "l")
+        self.screen.onkey(None, "q")
 
     def move_left(self) -> None:
         self.disable_keys()
